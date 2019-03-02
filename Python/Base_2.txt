@@ -1,0 +1,24 @@
+def get_number():
+    numer = input("Please, input number\n")
+
+    return numer
+
+
+def decToBin(number):
+    iteration = 1
+    i = number
+
+    while i >= 2:
+        iteration *= 2
+        i = int (i / 2)
+
+    while iteration > 0:
+        print(int(number/iteration), end='')
+        number %= iteration
+        iteration = int (iteration/2)
+        
+    print("\n")
+
+
+number = int(get_number())
+decToBin(number)

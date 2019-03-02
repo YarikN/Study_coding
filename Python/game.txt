@@ -1,0 +1,21 @@
+import random
+
+def get_number():
+    number = input("Please, input number\n")
+
+    return number
+
+
+def equal(key):
+    guess = get_number()
+    while guess != key:
+        guess = get_number()
+
+    return "Bingo!"
+
+
+down_range = get_number()
+up_range =  get_number()
+
+key = random.randint(down_range, up_range)
+print(equal(key))

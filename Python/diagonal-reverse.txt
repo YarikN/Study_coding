@@ -1,0 +1,20 @@
+def diagonal_reverse(get_matrix):
+    column = 0
+    end = len(get_matrix[0])
+    for row in range(0, end):
+        for col in range(column, end):
+            temp = get_matrix[row][col]
+            get_matrix[row][col] = get_matrix[col][row]
+            get_matrix[col][row] = temp
+        column += 1
+
+    return get_matrix
+
+
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+
+reversed_matrix = (diagonal_reverse(matrix))
+for row1 in reversed_matrix:
+    print row1

@@ -1,0 +1,45 @@
+def get_key():
+    key = input("Enter the key number 1-26")
+
+    while key < 1 or key > 26:
+        key = input("Enter the key number 1-26")
+
+    return key
+
+
+def get_message():
+    msg = raw_input("Type message")
+    return msg
+
+
+def caesar_cifer(key, message):
+    encrypted_message = ""
+
+
+    for letter in message:
+        num = ord(letter)
+
+        if (num == 32):
+            encrypted_message += " "
+
+        num += key
+
+        if num > 90:
+            num -=26
+        elif num < 65:
+            num +=26
+
+        if num > 122:
+            num -=26
+        elif num < 97:
+            num +=26
+
+        encrypted_message += chr(num)
+
+    return encrypted_message
+
+
+key1 = get_key()
+input_message = get_message()
+output_message = caesar_cifer(key1, input_message)
+print(output_message)

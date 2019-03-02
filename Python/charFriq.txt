@@ -1,0 +1,17 @@
+def get_string():
+    msg = input("Type message")
+    return msg
+
+
+def charFriq(list):
+    map_letter = {}
+    for letter in list:
+        freq = map_letter.get(letter, 0)
+        map_letter[letter] = freq + 1
+
+    return map_letter
+
+
+input_list = get_string()
+letter_map = charFriq(input_list)
+print(letter_map)
