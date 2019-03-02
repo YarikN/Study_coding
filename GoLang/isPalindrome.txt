@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+func main() {
+   var myWord string = "radar"
+   fmt.Println(isPalindrom(myWord))
+   fmt.Println()
+}
+
+
+func isPalindrom(newWord string) bool {
+   var status bool
+   status = true
+
+   var lenA int = len(newWord)
+   runes := []rune(newWord)
+   var middle int = lenA / 2
+
+   for i := lenA - 1; i >= middle; i-- {
+      if runes[lenA-i-1] != runes[i] {
+         status = false
+      }
+   }
+   return status

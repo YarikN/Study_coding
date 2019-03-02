@@ -1,0 +1,28 @@
+package main
+
+import (
+   "fmt"
+)
+
+func main() {
+   numbers := [4]int{1, 2, 3, 4}
+   fmt.Println(summa(numbers[:]))
+   fmt.Println(multiply(numbers[:]))
+
+}
+
+func summa(num []int) int {
+   var suma int = 0
+   for _, s := range num {
+      suma += s
+   }
+   return suma
+}
+
+func multiply(num []int) int {
+   var multy int = 1
+   for _, s := range num {
+      multy *= s
+   }
+   return multy
+}

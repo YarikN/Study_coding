@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+func main() {
+   var myWord string = "Shit happens"
+   fmt.Println(reverse(myWord))
+   fmt.Println()
+}
+
+
+func reverse(newWord string) string {
+   var lenA int = len(newWord)
+    polindrom := make([]rune, lenA)
+    runes := []rune(newWord)
+
+    for i := lenA-1; i >= 0; i-- {
+       polindrom[lenA-i-1] = runes[i]
+    }
+   return string(polindrom)
+}
