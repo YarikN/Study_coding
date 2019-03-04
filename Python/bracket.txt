@@ -1,19 +1,10 @@
 def check_bracket(get_bracket):
-    if get_bracket[0] == ')':
-        print("NOT OK")
-        quit()
-
     lenght = len(get_bracket)
 
     """ vvv This check is not necessary due to the task condition """
     if lenght%2 != 0:
         print("NOT OK")
         quit()
-
-    if get_bracket[lenght-1] == '(':
-        print("NOT OK")
-        quit()
-
 
     counter = 0
     symbol = ''
@@ -23,6 +14,9 @@ def check_bracket(get_bracket):
             counter += 1
         if get_bracket[number] == ')':
             counter -= 1
+        if counter < 0:
+            print("NOT OK")
+            quit()
 
     if counter != 0:
         print("NOT OK")
@@ -31,5 +25,5 @@ def check_bracket(get_bracket):
 
 
 
-bracket = "(((()((())))"
+bracket = "())(()"
 check_bracket(bracket)
